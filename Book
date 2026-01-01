@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookSathi - Affordable Book Rental</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #007bff; color: white; padding: 20px; text-align: center; }
+        .lang-toggle { position: absolute; top: 10px; right: 10px; }
+        .lang-toggle button { background: #28a745; color: white; border: none; padding: 5px 10px; cursor: pointer; }
+        section { padding: 20px; max-width: 1200px; margin: auto; }
+        .hero { background-color: #e9ecef; padding: 40px; text-align: center; }
+        .cta { background-color: #28a745; color: white; padding: 10px 20px; border: none; cursor: pointer; margin: 10px; }
+        .steps { display: flex; flex-wrap: wrap; justify-content: space-around; }
+        .step { width: 200px; text-align: center; margin: 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        form { max-width: 400px; margin: auto; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; }
+        button { background-color: #007bff; color: white; padding: 10px; border: none; cursor: pointer; }
+        footer { background-color: #007bff; color: white; text-align: center; padding: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="lang-toggle">
+            <button onclick="setLanguage('en')">English</button>
+            <button onclick="setLanguage('hi')">हिन्दी</button>
+        </div>
+        <h1 id="brand">BookSathi</h1>
+        <p id="tagline">Affordable books for every student</p>
+        <button class="cta" id="rentBtn">Rent Books</button>
+        <button class="cta" id="howBtn">How It Works</button>
+    </header>
+
+    <section id="hero" class="hero">
+        <h2 id="heroTitle">Welcome to BookSathi</h2>
+        <p id="heroDesc">Rent school books instead of buying expensive ones. Save 50-60% for middle-class families.</p>
+    </section>
+
+    <section id="howItWorks">
+        <h2 id="howTitle">How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <h3 id="step1">Step 1: Select School & Class</h3>
+                <p id="step1Desc">Choose your child's school and class.</p>
+            </div>
+            <div class="step">
+                <h3 id="step2">Step 2: Choose Book Set</h3>
+                <p id="step2Desc">Pick the required book set.</p>
+            </div>
+            <div class="step">
+                <h3 id="step3">Step 3: Pay Rent + Deposit</h3>
+                <p id="step3Desc">Pay affordable rent and refundable deposit.</p>
+            </div>
+            <div class="step">
+                <h3 id="step4">Step 4: Use for Full Year</h3>
+                <p id="step4Desc">Use books for the academic year.</p>
+            </div>
+            <div class="step">
+                <h3 id="step5">Step 5: Return & Get Deposit Back</h3>
+                <p id="step5Desc">Return books and get your deposit refunded.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories">
+        <h2 id="catTitle">Book Categories</h2>
+        <ul>
+            <li id="cat1">Class 1–5</li>
+            <li id="cat2">Class 6–8</li>
+            <li id="cat3">Class 9–12</li>
+        </ul>
+        <p id="filter">School-wise filtering available.</p>
+    </section>
+
+    <section id="pricing">
+        <h2 id="priceTitle">Pricing & Savings</h2>
+        <table>
+            <tr>
+                <th id="buyCol">Buying</th>
+                <th id="rentCol">Renting</th>
+            </tr>
+            <tr>
+                <td id="buyEx">₹4,000 per set</td>
+                <td id="rentEx">₹1,800 rent + ₹800 deposit</td>
+            </tr>
+        </table>
+        <p id="save">Save 50-60% on costs!</p>
+    </section>
+
+    <section id="rules">
+        <h2 id="rulesTitle">Rules & Policies</h2>
+        <ul>
+            <li id="rule1">Rental period: 1 academic year.</li>
+            <li id="rule2">Damage fine applicable.</li>
+            <li id="rule3">Deposit refunded after return.</li>
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2 id="aboutTitle">About BookSathi</h2>
+        <p id="aboutDesc">BookSathi is a platform for affordable education, helping middle-class families access quality books without high costs.</p>
+    </section>
+
+    <section id="contact">
+        <h2 id="contactTitle">Contact Us</h2>
+        <p id="contactInfo">Phone: 9XXXXXXXXX | WhatsApp: Click below</p>
+        <button onclick="window.open('https://wa.me/9XXXXXXXXX')">WhatsApp Us</button>
+        <form id="inquiryForm">
+            <input type="text" id="name" placeholder="Name">
+            <input type="tel" id="mobile" placeholder="Mobile">
+            <input type="text" id="school" placeholder="School">
+            <input type="text" id="class" placeholder="Class">
+            <textarea id="message" placeholder="Message"></textarea>
+            <button type="submit">Submit Inquiry</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 BookSathi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const texts = {
+            en: {
+                brand: "BookSathi",
+                tagline: "Affordable books for every student",
+                rentBtn: "Rent Books",
+                howBtn: "How It Works",
+                heroTitle: "Welcome to BookSathi",
+                heroDesc: "Rent school books instead of buying expensive ones. Save 50-60% for middle-class families.",
+                howTitle: "How It Works",
+                step1: "Step 1: Select School & Class",
+                step1Desc: "Choose your child's school and class.",
+                step2: "Step 2: Choose Book Set",
+                step2Desc: "Pick the required book set.",
+                step3: "Step 3: Pay Rent + Deposit",
+                step3Desc: "Pay affordable rent and refundable deposit.",
+                step4: "Step 4: Use for Full Year",
+                step4Desc: "Use books for the academic year.",
+                step5: "Step 5: Return & Get Deposit Back",
+                step5Desc: "Return books and get your deposit refunded.",
+                catTitle: "Book Categories",
+                cat1: "Class 1–5",
+                cat2: "Class 6–8",
+                cat3: "Class 9–12",
+                filter: "School-wise filtering available.",
+                priceTitle: "Pricing & Savings",
+                buyCol: "Buying",
+                rentCol: "Renting",
+                buyEx: "₹4,000 per set",
+                rentEx: "₹1,800 rent + ₹800 deposit",
+                save: "Save 50-60% on costs!",
+                rulesTitle: "Rules & Policies",
+                rule1: "Rental period: 1 academic year.",
+                rule2: "Damage fine applicable.",
+                rule3: "Deposit refunded after return.",
+                aboutTitle: "About BookSathi",
+                aboutDesc: "BookSathi is a platform for affordable education, helping middle-class families access quality books without high costs.",
+                contactTitle: "Contact Us",
+                contactInfo: "Phone: 9XXXXXXXXX | WhatsApp: Click below"
+            },
+            hi: {
+                brand: "BookSathi",
+                tagline: "पढ़ाई सस्ती, भविष्य मजबूत",
+                rentBtn: "किराये पर किताबें लें",
+                howBtn: "कैसे काम करता है",
+                heroTitle: "BookSathi में आपका स्वागत है",
+                heroDesc: "महंगी किताबें खरीदने के बजाय किराये पर लें। मिडिल-क्लास परिवारों के लिए 50-60% बचत।",
+                howTitle: "कैसे काम करता है",
+                step1: "चरण 1: स्कूल और क्लास चुनें",
+                step1Desc: "अपने बच्चे का स्कूल और क्लास चुनें।",
+                step2: "चरण 2: बुक सेट चुनें",
+                step2Desc: "आवश्यक बुक सेट चुनें।",
+                step3: "चरण 3: किराया + डिपॉजिट भुगतान करें",
+                step3Desc: "किफायती किराया और वापसी योग्य डिपॉजिट भुगतान करें।",
+                step4: "चरण 4: पूरे साल इस्तेमाल करें",
+                step4Desc: "अकादमिक साल के लिए किताबें इस्तेमाल करें।",
+                step5: "चरण 5: वापस करें और डिपॉजिट वापस पाएं",
+                step5Desc: "किताबें वापस करें और अपना डिपॉजिट वापस पाएं।",
+                catTitle: "बुक कैटेगरी",
+                cat1: "क्लास 1–5",
+                cat2: "क्लास 6–8",
+                cat3: "क्लास 9–12",
+                filter: "स्कूल-वार फिल्टरिंग उपलब्ध।",
+                priceTitle: "प्राइसिंग और बचत",
+                buyCol: "खरीदना",
+                rentCol: "किराये पर लेना",
+                buyEx: "₹4,000 प्रति सेट",
+                rentEx: "₹1,800 किराया + ₹800 डिपॉजिट",
+                save: "लागत पर 50-60% बचत!",
+                rulesTitle: "नियम और नीतियां",
+                rule1: "किराया अवधि: 1 अकादमिक साल।",
+                rule2: "क्षति पर जुर्माना लागू।",
+                rule3: "वापसी के बाद डिपॉजिट वापस।",
+                aboutTitle: "BookSathi के बारे में",
+                aboutDesc: "BookSathi एक प्लेटफॉर्म है जो मिडिल-क्लास परिवारों को उच्च लागत के बिना गुणवत्तापूर्ण किताबें उपलब्ध कराता है।",
+                contactTitle: "हमसे संपर्क करें",
+                contactInfo: "फोन: 9XXXXXXXXX | व्हाट्सएप: नीचे क्लिक करें"
+            }
+        };
+
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[id]');
+            elements.forEach(el => {
+                const key = el.id;
+                if (texts[lang][key]) {
+                    el.textContent = texts[lang][key];
+                }
+            });
+        }
+
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Inquiry submitted! We will contact you soon.');
+        });
+
+        // Default to English
+        setLanguage('en');
+    </script>
+</body>
+</html>
